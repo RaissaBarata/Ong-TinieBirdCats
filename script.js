@@ -20,9 +20,9 @@ document.querySelectorAll(".content__slider-circle").forEach((circle) => {
 
 document.addEventListener("DOMContentLoaded", function () {
   const backgroundImages = [
-    'url("/imagens/gato.png"), url("/imagens/background1.svg")',
-    'url("/imagens/maingato2.png"), url("/imagens/background2.svg")',
-    'url("/imagens/maingato3.png"), url("/imagens/background3.svg")',
+    'url("./imagens/gato.png"), url("./imagens/background1.svg")',
+    'url("./imagens/maingato2.png"), url("./imagens/background2.svg")',
+    'url("./imagens/maingato3.png"), url("./imagens/background3.svg")',
   ];
 
   const circles = document.querySelectorAll(".content__slider-circle");

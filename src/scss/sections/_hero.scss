@@ -1,5 +1,5 @@
 main {
-  background-image: url("/imagens/gato.png"), url("/imagens/background1.svg");
+  background-image: url("./imagens/gato.png"), url("./imagens/background1.svg");
   background-size: auto, cover;
   background-position: top $navbar-height right 30%, top right;
   background-repeat: no-repeat;
@@ -9,7 +9,7 @@ main {
 
   &::after {
     content: "";
-    background-image: url("/imagens/background2.svg");
+    background-image: url("./imagens/background2.svg");
     position: absolute;
     top: 0;
     background-position: top right;
@@ -71,7 +71,7 @@ main {
       margin-left: 25%;
 
       &::before {
-        content: url(/imagens/hero-before.svg);
+        content: url(./imagens/hero-before.svg);
         position: absolute;
         left: 25%;
         transform: translateX(-250px);

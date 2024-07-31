@@ -7,6 +7,7 @@ import optipng from "imagemin-optipng";
 import svgo from "imagemin-svgo";
 import cleanCSS from "gulp-clean-css";
 import htmlmin from "gulp-htmlmin";
+import terser from "gulp-terser";
 import sassCompiler from "sass";
 
 const sassWithCompiler = sass(sassCompiler);
@@ -14,6 +15,10 @@ const sassWithCompiler = sass(sassCompiler);
 const paths = {
   styles: {
     src: "src/scss/main.scss",
+    dest: "dist",
+  },
+  scripts: {
+    src: "script.js",
     dest: "dist",
   },
   images: {
@@ -33,7 +38,18 @@ function styles() {
     .pipe(sassWithCompiler().on("error", sassWithCompiler.logError))
     .pipe(cleanCSS())
     .pipe(sourcemaps.write("."))
-    .pipe(gulp.dest(paths.styles.dest));
+    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(gulp.dest("."));
+}
+
+function scripts() {
+  return gulp
+    .src(paths.scripts.src)
+    .pipe(terser())
+    .on("error", (err) => {
+      console.error("JavaScript minification error:", err);
+    })
+    .pipe(gulp.dest(paths.scripts.dest));
 }
 
 function images() {
@@ -63,8 +79,9 @@ function watch() {
   gulp.watch("src/scss/**/*.scss", styles);
   gulp.watch(paths.images.src, images);
   gulp.watch(paths.html.src, html);
+  gulp.watch(paths.scripts.src, scripts);
 }
 
-const build = gulp.series(styles, images, html);
+const build = gulp.series(styles, scripts, images, html);
 
-export { styles, images, html, watch, build };
+export { styles, scripts, images, html, watch, build };

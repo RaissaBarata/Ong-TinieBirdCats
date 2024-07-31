@@ -189,25 +189,25 @@
 
     &-item:nth-child(1) {
       &:after {
-        content: url(/imagens/linha-topo-esquerdo.svg);
+        content: url(./imagens/linha-topo-esquerdo.svg);
       }
     }
 
     &-item:nth-child(2) {
       &:after {
-        content: url(/imagens/linha-topo-direito.svg);
+        content: url(./imagens/linha-topo-direito.svg);
       }
     }
 
     &-item:nth-child(3) {
       &:after {
-        content: url(/imagens/linha-fundo-esquerdo.svg);
+        content: url(./imagens/linha-fundo-esquerdo.svg);
       }
     }
 
     &-item:nth-child(4) {
       &:after {
-        content: url(/imagens/linha-fundo-direito.svg);
+        content: url(./imagens/linha-fundo-direito.svg);
       }
     }
   }
