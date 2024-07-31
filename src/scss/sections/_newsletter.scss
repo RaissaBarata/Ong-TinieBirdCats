@@ -1,0 +1,70 @@
+.newsletter {
+    font-family: "Rubik", sans-serif;
+    color: white;
+    background: $dark-pink;
+    text-align: center;
+    padding: 100px 0;
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    &__title {
+      font-family: "Roboto", sans-serif;
+      font-size: 25px;
+      margin-bottom: 10px;
+    }
+  
+    &__text {
+      margin-bottom: 40px;
+    }
+  
+    &__email {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+  
+      &-input {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+        padding: 15px;
+        outline: none;
+  
+        &::placeholder {
+          color: darken(white, 5%);
+        }
+  
+        &:focus {
+          border: 1px solid $dark-blue;
+        }
+      }
+  
+      &-btn {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: transparent;
+        border: 0;
+  
+        img {
+          width: 30px;
+          filter: invert(100%);
+        }
+  
+        &:hover {
+          cursor: pointer;
+  
+          img {
+            filter: $filter-dark-blue;
+          }
+        }
+      }
+    }
+  }

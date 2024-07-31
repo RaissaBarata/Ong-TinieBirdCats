@@ -1,0 +1,43 @@
+.footer {
+    @extend .container;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1200px;
+    max-width: 100%;
+    font-family: "Roboto", sans-serif;
+  
+    &__logo {
+      display: flex;
+      align-items: center;
+      font-family: "SF New Republic", sans-serif;
+      font-size: 30px;
+  
+      img {
+        margin-right: 15px;
+        width: 120px;
+        position: relative;
+        top: -30px;
+      }
+    }
+  
+    &__links {
+      ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        min-width: 400px;
+        justify-content: space-between;
+        font-weight: 500;
+  
+        a {
+          text-decoration: none;
+          color: black;
+  
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,49 @@
+@mixin interactive-btn($base-color) {
+  color: white;
+  background-color: $base-color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($base-color, 5%);
+  }
+
+  &:active {
+    background-color: darken($base-color, 5%);
+  }
+}
+
+@mixin white-gradient {
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: #{$breakpoint-xs}) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: #{$breakpoint-sm}) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: #{$breakpoint-md}) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: #{$breakpoint-lg}) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: #{$breakpoint-xl}) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (max-width: #{$breakpoint-xxl}) {
+      @content;
+    }
+  }
+}

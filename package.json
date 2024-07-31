@@ -1,0 +1,23 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "sass": "^1.77.8"
+  },
+  "scripts": {
+    "build:css": "gulp styles",
+    "build:images": "gulp images",
+    "watch": "gulp watch",
+    "build": "gulp build"
+  },
+  "dependencies": {
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1"
+  }
+}

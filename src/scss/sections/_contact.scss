@@ -1,0 +1,134 @@
+.contact {
+  background-image: url("/imagens/footer-bg.svg");
+  background-position: bottom left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+  position: relative;
+  min-height: 800px;
+  margin-top: 200px;
+
+  &::after {
+    content: url(/imagens/bg-wrapper.svg);
+    position: absolute;
+    bottom: -610px;
+    right: 0;
+    z-index: -1;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    margin-left: auto;
+    font-family: "Roboto", sans-serif;
+    width: 500px;
+    max-width: 100%;
+    transform: translateY(40px);
+
+    input {
+      height: 70px;
+      padding: 5px 15px;
+    }
+
+    textarea {
+      padding: 15px;
+      height: 150px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin: 5px 0;
+      border-radius: 5px;
+      background-color: $blue;
+      color: white;
+      border: 1px solid white;
+      outline: none;
+
+      &:focus {
+        border: 1px solid $secondary-color;
+      }
+
+      &::placeholder {
+        color: darken(white, 5%);
+      }
+    }
+
+    .error-message {
+      color: white;
+      background-color: $dark-blue;
+      width: 100%;
+      border-radius: 5px;
+      padding: 5px 15px;
+      margin: 5px 0;
+      display: none;
+      position: relative;
+
+      &::before {
+        content: "⯅";
+        position: absolute;
+        color: $dark-blue;
+        top: -25px;
+        font-size: 30px;
+      }
+    }
+  }
+
+  &__image {
+    margin-right: auto;
+  }
+
+  &__title {
+    text-align: left;
+    color: white;
+    font-size: 45px;
+    font-family: "SF New Republic", sans-serif;
+    line-height: 1;
+    margin-bottom: 40px;
+    margin-right: auto;
+  }
+
+  &__send-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+    font-size: 26px;
+    height: 80px;
+    border: 0;
+    border-radius: 5px;
+    @include interactive-btn($dark-blue);
+
+    & img {
+      margin-left: 15px;
+      width: 20px;
+    }
+  }
+
+  @include respond-to(xl) {
+    background-color: $blue;
+    padding: 70px 0;
+
+    &::after {
+      content: none;
+    }
+
+    .container {
+      flex-direction: column;
+    }
+    &__form {
+      margin: 0 auto 50px auto;
+      transform: translate(0);
+    }
+
+    &__image {
+      margin: 0 auto;
+    }
+  }
+}

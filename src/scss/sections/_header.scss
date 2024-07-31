@@ -1,0 +1,191 @@
+.navbar {
+  padding: 15px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  width: 100%;
+  height: $navbar-height;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1920px;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-image: url("/imagens/navbar-after.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 100%;
+      max-width: 1920px;
+      height: 100%;
+      position: absolute;
+      top: calc($navbar-height - 1px);
+      left: calc(50% - 500px);
+      transform: translateX(-50%);
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    text-decoration: none;
+  }
+
+  &__title {
+    font-family: "SF New Republic", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: $primary-color;
+    line-height: 1;
+    margin: 10px;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+
+    a {
+      text-decoration: none;
+      color: $primary-color;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 17px;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+
+    li {
+      margin: 30px;
+
+      img {
+        display: inline-block;
+        margin-right: 5px;
+      }
+    }
+
+    &-about a {
+      display: inline-block;
+      color: $secondary-color;
+      font-size: 24px;
+    }
+  }
+
+  &__adopt-btn {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 10px;
+    font-family: "Roboto", sans-serif;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 35px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 15px;
+    @include interactive-btn($lighter-blue);
+  }
+
+  &__toggle {
+    border: 1px solid red;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &-icon {
+      width: 25px;
+      height: 2px;
+      background-color: $primary-color;
+      display: block;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        width: 25px;
+        height: 2px;
+        background-color: $primary-color;
+        display: block;
+        position: absolute;
+        left: 0;
+        transition: 0.3s ease;
+      }
+
+      &::before {
+        top: -8px;
+      }
+
+      &::after {
+        top: 8px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    &__content {
+      width: 80%;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &__logo {
+      width: 50px;
+    }
+
+    &__links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      align-items: center;
+      background-color: #ffffff;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.048);
+
+      li {
+        margin: 10px 0;
+      }
+    }
+
+    &__toggle {
+      display: block;
+    }
+
+    &__links.navbar__links--active {
+      display: flex;
+    }
+
+    &__adopt-btn {
+      font-size: 12px;
+      width: 150px;
+      justify-content: center;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    &__title {
+      font-size: 24px;
+    }
+  }
+}

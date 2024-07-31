@@ -1,0 +1,475 @@
+.about-us {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+
+  &::before {
+    content: "";
+    background-image: url(/imagens/backgroundadoção.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    width: 100%;
+    height: 100px;
+    max-width: 1920px;
+    position: absolute;
+    top: -90px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__beggining {
+    background: linear-gradient(to right, #1250aed8, #1265a800);
+    padding: 10px 20px;
+    border-radius: 10px;
+    z-index: 1;
+    position: absolute;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &-title {
+      font-family: "SF New Republic", sans-serif;
+      font-size: 45px;
+      background-color: $blue;
+      margin: 0;
+      padding: 16px 90px;
+      color: white;
+      border-radius: 10px;
+    }
+  }
+
+  &__title {
+    font-family: "SF New Republic", sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    color: $primary-color;
+  }
+
+  &__text {
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: $primary-color;
+    text-align: center;
+    margin: 40px auto 200px auto;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+    @extend .container;
+  }
+
+  &__cat {
+    flex: 1;
+    margin: 5px;
+    z-index: 0;
+  }
+
+  &__timeline {
+    height: auto;
+    margin: 5px;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    width: 950px;
+    height: 1000px;
+
+    &-arrowdown {
+      position: absolute;
+      left: 315px;
+      top: 85px;
+    }
+
+    &-vertical {
+      position: absolute;
+      top: 240px;
+      left: 50%;
+      width: 2px;
+      height: 770px;
+      background-color: $dark-pink;
+      opacity: 0.5;
+    }
+
+    &-year {
+      &2016,
+      &2017,
+      &2018,
+      &2019 {
+        &-year {
+          position: absolute;
+          font-size: 30px;
+          transform: translateY(-50%);
+        }
+
+        &-line {
+          position: absolute;
+          width: 100px;
+          height: 2px;
+          background-color: $dark-pink;
+          opacity: 0.5;
+          left: 50%;
+          transform: translateX(-100%);
+          z-index: -1;
+        }
+
+        &-image {
+          padding: 15px;
+          border-radius: 100%;
+          background-color: $dark-pink;
+          position: absolute;
+          width: 50px;
+          filter: drop-shadow(0px 5px 10px $dark-pink);
+        }
+
+        &-text {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          font-size: 14px;
+
+          > :first-child {
+            margin-right: 15px;
+          }
+        }
+      }
+
+      &2016 {
+        &-year {
+          top: 300px;
+          left: 250px;
+        }
+
+        &-line {
+          top: 300px;
+        }
+
+        &-image {
+          top: 300px;
+          left: calc(50% - 100px);
+          transform: translate(-50%, -50%);
+        }
+
+        &-text {
+          top: 350px;
+          left: calc(50% - 223px);
+          transform: translateX(-50%);
+        }
+      }
+
+      &2017 {
+        &-year {
+          top: 450px;
+          right: 250px;
+        }
+
+        &-line {
+          top: 450px;
+          transform: translateX(0);
+        }
+
+        &-image {
+          top: 450px;
+          left: calc(50% + 100px);
+          transform: translate(-50%, -50%);
+        }
+
+        &-text {
+          top: 500px;
+          left: calc(50% + 210px);
+          transform: translateX(-50%);
+        }
+      }
+
+      &2018 {
+        &-year {
+          top: 600px;
+          left: 250px;
+        }
+
+        &-line {
+          top: 600px;
+        }
+
+        &-image {
+          top: 600px;
+          left: calc(50% - 100px);
+          transform: translate(-50%, -50%);
+        }
+
+        &-text {
+          top: 650px;
+          left: calc(50% - 223px);
+          transform: translateX(-50%);
+        }
+      }
+
+      &2019 {
+        &-year {
+          top: 750px;
+          right: 250px;
+        }
+
+        &-line {
+          top: 750px;
+          transform: translateX(0);
+        }
+
+        &-image {
+          top: 750px;
+          left: calc(50% + 100px);
+          transform: translate(-50%, -50%);
+        }
+
+        &-text {
+          top: 800px;
+          left: calc(50% + 210px);
+          transform: translateX(-50%);
+        }
+      }
+    }
+    &-button {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 280px;
+      font-family: "Roboto", sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      border: none;
+      border-radius: 4px;
+      padding: 20px 35px;
+      cursor: pointer;
+      color: white;
+      @include interactive-btn($dark-blue);
+
+      img {
+        margin-left: 15px;
+        width: 20px;
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    .about-us {
+      &__content {
+        padding: 0px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      &__text {
+        font-size: 14px;
+      }
+
+      &__beggining {
+        padding: 10px;
+        width: 350px;
+        top: 250px;
+        left: 50%;
+
+        &-title {
+          font-size: 14px;
+        }
+      }
+
+      &__timeline {
+        width: 300px;
+        &-vertical {
+          top: 50px;
+          left: 50%;
+          width: 2px;
+          height: 770px;
+          background-color: $dark-pink;
+          opacity: 0.5;
+        }
+        &-arrowdown {
+          display: none;
+        }
+
+        &-year {
+          &2016,
+          &2017,
+          &2018,
+          &2019 {
+            &-year {
+              font-size: 20px;
+            }
+
+            &-text {
+              display: flex;
+              align-items: center;
+              position: absolute;
+              font-size: 10px;
+            }
+          }
+
+          &2016 {
+            &-year {
+              left: 0px;
+              top: 175px;
+            }
+
+            &-text {
+              top: 250px;
+              left: calc(50% - 150px);
+            }
+
+            &-line {
+              top: 170px;
+            }
+
+            &-image {
+              top: 175px;
+            }
+          }
+
+          &2017 {
+            &-year {
+              top: 400px;
+              right: 0px;
+            }
+
+            &-text {
+              width: 190px;
+              left: calc(50% + 150px);
+              top: 450px;
+            }
+
+            &-line {
+              top: 400px;
+            }
+
+            &-image {
+              top: 400px;
+            }
+          }
+
+          &2018 {
+            &-year {
+              left: 0px;
+            }
+
+            &-text {
+              left: calc(50% - 150px);
+            }
+          }
+
+          &2019 {
+            &-year {
+              right: 0px;
+            }
+
+            &-text {
+              width: 190px;
+              left: calc(50% + 150px);
+            }
+          }
+        }
+        &-button {
+          width: 250px;
+          font-size: 24px;
+          padding: 10px 25px;
+        }
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    .about-us {
+      &__title {
+        font-size: 30px;
+      }
+
+      &__cat {
+        width: 300px;
+      }
+
+      &__timeline {
+        width: 400px;
+
+        &-year {
+          &2016,
+          &2017,
+          &2018,
+          &2019 {
+            &-year {
+              position: absolute;
+              transform: translateY(-50%);
+            }
+
+            &-text {
+              width: 25%;
+              display: flex;
+              align-items: center;
+              position: absolute;
+              font-size: 8px;
+            }
+
+            &2016 {
+              &-year {
+                top: 350px;
+                left: -30px;
+              }
+
+              &-text {
+                top: 350px;
+                left: calc(50% - 150px);
+              }
+
+              &-line {
+                top: 300px;
+              }
+            }
+
+            &2017 {
+              &-year {
+                right: -30px;
+              }
+
+              &-text {
+                width: 190px;
+                left: calc(50% + 150px);
+              }
+            }
+
+            &2018 {
+              &-year {
+                left: -30px;
+              }
+
+              &-text {
+                left: calc(50% - 150px);
+              }
+            }
+
+            &2019 {
+              &-year {
+                right: -30px;
+              }
+
+              &-text {
+                width: 190px;
+                left: calc(50% + 150px);
+              }
+            }
+          }
+          &-button {
+            width: 250px;
+            font-size: 24px;
+            padding: 10px 25px;
+          }
+        }
+      }
+    }
+  }
+}

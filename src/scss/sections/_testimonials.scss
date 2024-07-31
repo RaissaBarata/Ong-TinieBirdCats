@@ -1,0 +1,361 @@
+.testimonials {
+  height: 500px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 100px;
+  overflow: hidden;
+  padding: 20px;
+  position: relative;
+  display: flex;
+
+  &__header {
+    background-color: #fff;
+    position: relative;
+    width: 700px;
+    height: 100%;
+
+    &-quote {
+      font-size: 800px;
+      font-family: "Signika", sans-serif;
+      color: $medium-pink;
+      opacity: 0.1;
+      line-height: 0.5;
+      position: absolute;
+      left: -80px;
+      top: 230px;
+    }
+
+    &-title {
+      font-family: "SF New Republic", sans-serif;
+      font-size: 45px;
+      font-weight: 800;
+      color: $primary-color;
+      position: absolute;
+      left: 280px;
+      top: 100px;
+    }
+
+    &-intro {
+      font-family: "Roboto", sans-serif;
+      font-size: 20px;
+      font-weight: 200;
+      color: $primary-color;
+      position: absolute;
+      left: 280px;
+      top: 160px;
+      text-align: left;
+    }
+  }
+
+  &__slider {
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+
+    &-left {
+      position: absolute;
+      left: 10px;
+      top: 200px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    &-right {
+      position: absolute;
+      right: 250px;
+      top: 200px;
+      transform: translateY(-50%);
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    &-cards {
+      position: relative;
+      margin-top: 60px;
+      margin-left: 100px;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      transition: transform 0.5s ease;
+
+      width: 30%;
+
+      &-card {
+        position: relative;
+        min-width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        border-radius: 10px;
+        font-family: Roboto, sans-serif;
+        font-size: 20px;
+        color: $primary-color;
+        box-shadow: $lighter-pink 10px 10px 50px 0px;
+        margin: 10px;
+        flex-shrink: 0;
+        opacity: 0.3;
+        transition: opacity 0.5s ease;
+
+        &-photo {
+          position: absolute;
+          right: 110px;
+          top: -50px;
+        }
+
+        &-secondphoto {
+          position: absolute;
+          right: 110px;
+          top: -50px;
+        }
+
+        &-thirdphoto {
+          position: absolute;
+          right: 110px;
+          top: -50px;
+        }
+
+        &-review {
+          margin: 10px;
+          width: 308px;
+          text-align: center;
+        }
+
+        &.inactive {
+          opacity: 0.3;
+        }
+
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @include respond-to(xl) {
+    .testimonials {
+      &__header {
+        width: 50%;
+        &-quote {
+          font-size: 400px;
+          left: 0;
+          top: 50px;
+        }
+
+        &-title {
+          font-size: 40px;
+          left: 0;
+          top: 20px;
+        }
+
+        &-intro {
+          font-size: 16px;
+          left: 0;
+          top: 70px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__slider {
+      width: 100%;
+
+      &-right {
+        right: 50px;
+      }
+
+      &-cards {
+        margin-left: 300px;
+        &-card {
+          font-size: 20px;
+
+          &-photo {
+            right: 100px;
+            width: 80px;
+          }
+          &-secondphoto {
+            right: 100px;
+            width: 80px;
+          }
+          &-thirdphoto {
+            right: 100px;
+            width: 80px;
+          }
+
+          &-review {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(lg) {
+    .testimonials {
+      position: relative;
+      margin-top: 20px;
+
+      &__header {
+        position: relative;
+        width: 100%;
+        text-align: center;
+
+        &-quote {
+          font-size: 200px;
+          left: 0;
+          top: 50px;
+        }
+
+        &-title {
+          font-size: 20px;
+          left: 0;
+          top: 20px;
+        }
+
+        &-intro {
+          font-size: 16px;
+          left: 0;
+          top: 70px;
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__slider {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      position: absolute;
+      margin-top: 20px;
+      top: 150px;
+
+      &-right {
+        right: 50px;
+      }
+
+      &-cards {
+        width: 500px;
+        &-card {
+          height: 250px;
+          font-size: 12px;
+
+          &-photo {
+            right: 100px;
+            width: 80px;
+          }
+          &-secondphoto {
+            right: 100px;
+            width: 80px;
+          }
+          &-thirdphoto {
+            right: 100px;
+            width: 80px;
+          }
+
+          &-review {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(md) {
+    &__slider {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      margin-top: 20px;
+      top: 150px;
+
+      &-right {
+        right: 50px;
+      }
+
+      &-cards {
+        &-card {
+          &-photo {
+            width: 80px;
+            right: 90px;
+          }
+          &-secondphoto {
+            right: 90px;
+            width: 80px;
+          }
+          &-thirdphoto {
+            width: 80px;
+            right: 90px;
+          }
+
+          &-review {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(sm) {
+    &__slider {
+      &-cards {
+        margin-left: 300px;
+        &-card {
+          position: relative;
+
+          &-photo {
+            width: 80px;
+            right: 80px;
+          }
+          &-secondphoto {
+            right: 80px;
+            width: 80px;
+          }
+          &-thirdphoto {
+            width: 80px;
+            right: 80px;
+          }
+
+          &-review {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond-to(xs) {
+    &__slider {
+      &-cards {
+        margin-left: 500px;
+
+        &-card {
+          position: relative;
+
+          &-photo {
+            width: 100px;
+            right: 80px;
+          }
+          &-secondphoto {
+            right: 80px;
+            width: 100px;
+          }
+          &-thirdphoto {
+            width: 100px;
+            right: 80px;
+          }
+
+          &-review {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+}
