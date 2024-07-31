@@ -13,11 +13,11 @@ Certifique-se de ter o seguinte instalado em sua máquina:
 
 1. Clone este repositório:
 
-```git clone [URL_DO_REPOSITÓRIO]```
+```git clone https://github.com/RaissaBarata/Teste-KBR-TEC.git```
 
 2. Navegue até o diretório do projeto:
 
-```cd OngTinieBirdCats```
+```cd Teste-KBR-TEC```
 
 3. Instale as dependências:
 
